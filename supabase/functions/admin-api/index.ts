@@ -19,7 +19,7 @@ const json = (body: unknown, status = 200, origin = "") =>
       "content-type": "application/json",
       "access-control-allow-origin": origin,
       "access-control-allow-headers":
-        "content-type,x-admin-password,authorization,apikey",
+        "content-type,x-admin-password,authorization,apikey,x-client-info",
       vary: "origin",
     },
   });
@@ -41,7 +41,7 @@ Deno.serve(async (request) => {
           headers: {
             "access-control-allow-origin": corsOrigin,
             "access-control-allow-headers":
-              "content-type,x-admin-password,authorization,apikey",
+              "content-type,x-admin-password,authorization,apikey,x-client-info",
             "access-control-allow-methods": "POST,OPTIONS",
           },
         })
